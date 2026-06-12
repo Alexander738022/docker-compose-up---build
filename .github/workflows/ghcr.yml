@@ -6,9 +6,7 @@ on:
       - main
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     permissions:
@@ -16,22 +14,21 @@ jobs:
       packages: write
 
     steps:
-
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Login GHCR
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/alexander738022/devops-flask-postgres:latest
+            ghcr.io/alexander738022/devops-flask-postgres:1.0.0
             ghcr.io/alexander738022/devops-flask-postgres:latest
