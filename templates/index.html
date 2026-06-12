@@ -1,19 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>DevOps Flask</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        h2, h3 {
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #38bdf8;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background: #0ea5e9;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>{{ app_name }}</h1>
+<div class="card">
+    <h1>{{ app_name }}</h1>
+    <h2>Versión: {{ version }}</h2>
+    <h3>PostgreSQL: {{ estado }}</h3>
 
-<h2>Versión: {{ version }}</h2>
-
-<h3>PostgreSQL: {{ estado }}</h3>
-
-<a href="/productos">
-    Ver productos
-</a>
+    <a href="/productos">Ver productos</a>
+</div>
 
 </body>
 </html>

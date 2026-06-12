@@ -1,31 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Productos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #38bdf8;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        th {
+            background: #38bdf8;
+            color: black;
+        }
+
+        tr:hover {
+            background: #334155;
+        }
+
+        a.button {
+            padding: 6px 12px;
+            background: #22c55e;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        a.button:hover {
+            background: #16a34a;
+        }
+
+        .top {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .back {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Listado de Productos</h1>
+<div class="container">
 
-<table border="1">
+    <h1>Listado de Productos</h1>
 
-<tr>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Stock</th>
-</tr>
+    <div class="top">
+        <a class="back" href="/">⬅ Volver</a>
+    </div>
 
-{% for p in productos %}
-<tr>
-    <td>{{ p[0] }}</td>
-    <td>{{ p[1] }}</td>
-    <td>{{ p[2] }}</td>
-    <td>{{ p[3] }}</td>
-</tr>
-{% endfor %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acción</th>
+        </tr>
 
-</table>
+        {% for p in productos %}
+        <tr>
+            <td>{{ p[0] }}</td>
+            <td>{{ p[1] }}</td>
+            <td>{{ p[2] }}</td>
+            <td>{{ p[3] }}</td>
+            <td>
+                <a class="button" href="/producto/{{ p[0] }}">
+                    Ver
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
 
 </body>
 </html>
