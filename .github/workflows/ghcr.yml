@@ -33,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/devops-flask-postgres:1.0.0
-            ghcr.io/${{ github.repository_owner }}/devops-flask-postgres:latest
+            ghcr.io/alexander738022/devops-flask-postgres:latest
+            ghcr.io/alexander738022/devops-flask-postgres:latest
